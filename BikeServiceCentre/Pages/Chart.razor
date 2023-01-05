@@ -17,17 +17,12 @@
 
 @code {
     private GlobalState _globalState { get; set; }
-    private List<ItemModel> _items { get; set; }
 
-    protected override void OnInitialized()
-    {
-       // _items = ItemService.View(_globalState.CurrentUser.Id);
-    }
  
     public List<ChartSeries> Series = new List<ChartSeries>()
     {
         new ChartSeries() { Name = "Items", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
-       //new ChartSeries() {Name = "Items", Data.ItemService.View()}
+      
     };
     public string[] XAxisLabels = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
 }
