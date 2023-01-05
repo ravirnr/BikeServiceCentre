@@ -1,0 +1,108 @@
+﻿@page "/inventrylog"
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <h1 class="navbar-brand mb-0 h1">Items</h1>
+    <button class="btn btn-primary" type="button" @onclick="OpenAddItemDialog">
+        <span class="oi oi-plus" /> Add
+    </button>
+</nav>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ItemName</th>
+            <th>Quantity</th>
+            <th>ApproveBy</th>
+            <th>TakenBy</th>
+            <th>Date</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Inv in _inventry)
+        {
+            <tr>
+                <td>@Inv.ItemName</td>
+                <td>@Inv.Quantity</td>
+                <td>@Inv.ApproveBy</td>
+                <td>@Inv.TakenBy</td>
+                <td>@Inv.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (_showEditItemDialog)
+{
+    <ModalDialog Title="@_dialogTitle" OnClose="@OnEditItemDialogClose" OkLabel="@_dialogOkLabel">
+        <div class="form-floating">
+            <input id="taskName" type="text" class="form-control" @bind="_inventryModel.ItemName" placeholder="Task Name" />
+            <label for="taskName">Item Name</label>
+
+        </div>
+        <div class="form-floating">
+            <input id="taskqty" type="text" class="form-control" @bind="_inventryModel.Quantity" placeholder="Task Quantity" />
+            <label for="taskqty">Quantity</label>
+        </div>
+        <div class="form-floating">
+            <input id="taskqty" type="text" class="form-control" @bind="_inventryModel.TakenBy" placeholder="Task Quantity" />
+            <label for="taskqty">TakenBy</label>
+        </div>
+        <div class="form-floating">
+            <label for="dueDate">Date</label>
+            <input id="date" type="date" min='@DateTime.Now.ToString("yyyy-MM-dd")'
+               value='@_inventryModel.Date.ToString("yyyy-MM-dd")' class="form-control text-left"
+               placeholder="Date">
+        </div>
+       
+    </ModalDialog>
+}
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private bool _showEditItemDialog { get; set; }
+
+    private List<InventryModel> _inventry { get; set; }
+
+    private string _dialogTitle { get; set; }
+    private string _dialogOkLabel { get; set; }
+
+    private InventryModel _inventryModel { get; set; } 
+
+    protected override void OnInitialized()
+    {
+        _inventry = InventryServices.View(_globalState.CurrentUser.Id);
+    }
+private void OpenAddItemDialog()
+    {
+        _dialogTitle = "Add Items";
+        _dialogOkLabel = "Add";
+        _inventryModel = new InventryModel();
+        _inventryModel.Id = Guid.Empty;
+        _showEditItemDialog = true;
+    }
+    private void OnEditItemDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _showEditItemDialog = false;
+        }
+        else
+        {
+            try
+            {
+                //_editItemErrorMessage = "";
+                if (_inventryModel.Id == Guid.Empty)
+                {
+                    _inventry = InventryServices.Insert(_globalState.CurrentUser.Id, _inventryModel.ItemName, _inventryModel.Quantity, _inventryModel.TakenBy, _inventryModel.Date);
+
+                }
+                
+                _showEditItemDialog = false;
+            }
+            catch (Exception e)
+            {
+               // _editItemErrorMessage = e.Message;
+            }
+        }
+    }
+}

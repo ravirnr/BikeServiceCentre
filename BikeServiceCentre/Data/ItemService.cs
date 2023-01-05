@@ -84,4 +84,10 @@ public static class ItemService
         SaveAll(userId, items);
         return items;
     }
+    //public static Dictionary<> chart()
+    //{
+    //    return View(Guid userId)
+    //    //_items1 = ItemService.View(_globalState.CurrentUser.Id);
+    //}
+
 }

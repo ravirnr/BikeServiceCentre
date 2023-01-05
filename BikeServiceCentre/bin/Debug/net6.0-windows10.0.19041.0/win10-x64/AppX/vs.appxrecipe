@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\AD\BikeServiceCentre\BikeServiceCentre\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-01-03T13:28:33.755</Modified>
+      <Modified>2023-01-05T04:23:40.847</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\AD\BikeServiceCentre\BikeServiceCentre\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-01-03T13:28:32.702</Modified>
+      <Modified>2023-01-05T04:23:40.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\AD\BikeServiceCentre\BikeServiceCentre\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeServiceCentre.runtimeconfig.json">
       <PackagePath>BikeServiceCentre.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\AD\BikeServiceCentre\BikeServiceCentre\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeServiceCentre.dll">
       <PackagePath>BikeServiceCentre.dll</PackagePath>
-      <Modified>2023-01-03T13:28:31.657</Modified>
+      <Modified>2023-01-05T04:20:26.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\AD\BikeServiceCentre\BikeServiceCentre\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BikeServiceCentre.exe</PackagePath>
-      <Modified>2023-01-03T13:28:31.678</Modified>
+      <Modified>2023-01-05T04:20:26.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\IIC Laptop\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.11\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1136,7 +1136,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\AD\BikeServiceCentre\BikeServiceCentre\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeServiceCentre.deps.json">
       <PackagePath>BikeServiceCentre.deps.json</PackagePath>
-      <Modified>2023-01-03T13:28:33.272</Modified>
+      <Modified>2023-01-05T04:23:40.588</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\IIC Laptop\.nuget\packages\microsoft.maui.controls.ref.win\6.0.547\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
